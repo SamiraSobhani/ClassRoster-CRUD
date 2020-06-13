@@ -1,13 +1,19 @@
 package com.ClassRoster.ClassRoster;
 
+import ClassRosterController.ClassRosterController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ClassRosterApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClassRosterApplication.class, args);
+
+
+			ClassRosterController controller = new ClassRosterController();
+			controller.run();
+
+
 	}
 
 }
