@@ -7,7 +7,11 @@ import java.util.List;
 public class ClassRosterView {
 
 
-    UserIO io = new UserIOConsoleImpl();
+    private UserIO io;
+
+    public ClassRosterView(UserIO io) {
+        this.io = io;
+    }
 
     public int printMenuAndGetSelection() {
         io.print("Main Menu");
@@ -83,4 +87,11 @@ public class ClassRosterView {
         io.readString("Student successfully removed. Please hit enter to continue.");
     }
 
+    public void displayExitBanner() {
+        io.print("Good Bye!!!");
+    }
+
+    public void displayUnknownCommandBanner() {
+        io.print("Unknown Command!!!");
+    }
 }
