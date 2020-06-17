@@ -1,8 +1,9 @@
-package ClassRosterController;
+package com.ClassRoster.ClassRoster.ClassRosterController;
 
-import ClassRosterDAO.ClassRosterDAO;
-import ClassRosterDTO.Student;
-import ClassRosterUI.ClassRosterView;
+import com.ClassRoster.ClassRoster.ClassRosterDAO.ClassRosterDAO;
+import com.ClassRoster.ClassRoster.ClassRosterDAO.ClassRosterPersistenceException;
+import com.ClassRoster.ClassRoster.ClassRosterDTO.Student;
+import com.ClassRoster.ClassRoster.ClassRosterUI.ClassRosterView;
 
 
 import java.util.List;
@@ -51,7 +52,7 @@ public class ClassRosterController {
             }
             exitMessage();
 
-        } catch (ClassRosterDAOException e) {
+        } catch (ClassRosterPersistenceException e) {
             view.displayErrorMessage(e.getMessage());
         }
     }
@@ -62,14 +63,14 @@ public class ClassRosterController {
     }
 
 
-    private void createStudent() throws ClassRosterDAOException {
+    private void createStudent() throws ClassRosterPersistenceException {
         view.displayCreateStudentBanner();
         Student newStudent = view.getNewStudentInfo();
         dao.addStudent(newStudent.getStudentId(), newStudent);
         view.displayCreateSuccessBanner();
     }
 
-    private void listStudents() throws ClassRosterDAOException {
+    private void listStudents() throws ClassRosterPersistenceException {
         view.displayDisplayAllBanner();
         List<Student> studentList = dao.getAllStudents();
         view.displayStudentList(studentList);
@@ -82,7 +83,7 @@ public class ClassRosterController {
         view.displayStudent(student);
     }
 
-    private void removeStudent() throws ClassRosterDAOException {
+    private void removeStudent() throws ClassRosterPersistenceException {
         view.displayRemoveStudentBanner();
         String studentId = view.getStudentIdChoice();
         dao.removeStudent(studentId);
@@ -96,6 +97,7 @@ public class ClassRosterController {
     private void exitMessage() {
         view.displayExitBanner();
     }
+}
 
 
 

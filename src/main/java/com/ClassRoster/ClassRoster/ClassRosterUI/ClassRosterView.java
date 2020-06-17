@@ -1,6 +1,6 @@
-package ClassRosterUI;
+package com.ClassRoster.ClassRoster.ClassRosterUI;
 
-import ClassRosterDTO.Student;
+import com.ClassRoster.ClassRoster.ClassRosterDTO.Student;
 
 import java.util.List;
 

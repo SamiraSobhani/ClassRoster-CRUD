@@ -1,4 +1,4 @@
-package ClassRosterDTO;
+package com.ClassRoster.ClassRoster.ClassRosterDTO;
 
 public class Student {
 

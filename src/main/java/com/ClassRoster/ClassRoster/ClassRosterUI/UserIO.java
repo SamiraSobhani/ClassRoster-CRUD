@@ -1,4 +1,4 @@
-package ClassRosterUI;
+package com.ClassRoster.ClassRoster.ClassRosterUI;
 
     public interface UserIO {
 

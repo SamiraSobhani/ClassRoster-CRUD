@@ -1,4 +1,6 @@
-package ClassRosterUI;
+package com.ClassRoster.ClassRoster.ClassRosterUI;
+
+import com.ClassRoster.ClassRoster.ClassRosterUI.UserIO;
 
 import java.util.Scanner;
 
