@@ -1,5 +1,7 @@
 package com.ClassRoster.ClassRoster.ClassRosterDTO;
 
+import java.util.Objects;
+
 public class Student {
 
     private String firstName;
@@ -38,5 +40,21 @@ public class Student {
 
     public void setCohort(String cohort) {
         this.cohort = cohort;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student student = (Student) o;
+        return Objects.equals(getFirstName(), student.getFirstName()) &&
+                Objects.equals(getLastName(), student.getLastName()) &&
+                Objects.equals(getStudentId(), student.getStudentId()) &&
+                Objects.equals(getCohort(), student.getCohort());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName(), getLastName(), getStudentId(), getCohort());
     }
 }

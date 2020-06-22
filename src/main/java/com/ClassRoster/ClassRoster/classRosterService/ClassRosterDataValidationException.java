@@ -6,8 +6,7 @@ public class ClassRosterDataValidationException extends Exception {
         super(message);
     }
 
-    public ClassRosterDataValidationException(String message,
-                                              Throwable cause) {
+    public ClassRosterDataValidationException(String message, Throwable cause) {
         super(message, cause);
     }
 }

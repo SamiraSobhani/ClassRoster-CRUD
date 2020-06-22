@@ -28,7 +28,7 @@ public class ClassRosterDAOFileImpl implements ClassRosterDAO{
         }
 
         @Override
-        public Student getStudent(String studentId) {
+        public Student getStudent(String studentId)throws ClassRosterPersistenceException {
             return students.get(studentId);
         }
 

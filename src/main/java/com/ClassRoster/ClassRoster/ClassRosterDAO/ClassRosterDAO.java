@@ -37,7 +37,7 @@ public interface ClassRosterDAO {
          * @return the Student object associated with the given student id,
          * null if no such student exists
          */
-        Student getStudent(String studentId);
+        Student getStudent(String studentId)throws ClassRosterPersistenceException;
 
         /**
          * Removes from the roster the student associated with the given id.
