@@ -57,4 +57,10 @@ public class Student {
     public int hashCode() {
         return Objects.hash(getFirstName(), getLastName(), getStudentId(), getCohort());
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + studentId + " |Name: " + firstName + " "
+                + lastName + " |Cohort: " + cohort;
+    }
 }
