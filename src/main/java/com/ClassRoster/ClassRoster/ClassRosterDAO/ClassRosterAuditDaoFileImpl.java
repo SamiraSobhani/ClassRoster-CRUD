@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 public class ClassRosterAuditDaoFileImpl implements ClassRosterAuditDao {
 
-    public static final String AUDIT_FILE = "audit.txt";
+    public static final String AUDIT_FILE = "roster.txt";
 
     public void writeAuditEntry(String entry) throws ClassRosterPersistenceException {
         PrintWriter out;

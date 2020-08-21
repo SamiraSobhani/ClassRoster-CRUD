@@ -6,8 +6,7 @@ public class ClassRosterDuplicateIdException extends Exception {
         super(message);
     }
 
-    public ClassRosterDuplicateIdException(String message,
-                                           Throwable cause) {
+    public ClassRosterDuplicateIdException(String message, Throwable cause) {
         super(message, cause);
     }
 }

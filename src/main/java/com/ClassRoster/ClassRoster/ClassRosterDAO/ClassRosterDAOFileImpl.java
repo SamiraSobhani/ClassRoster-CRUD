@@ -10,7 +10,7 @@ import java.util.*;
 public class ClassRosterDAOFileImpl implements ClassRosterDAO{
 
         private Map<String, Student> students = new HashMap<>();
-        public static final String ROSTER_FILE = "roster.txt";
+        public static final String ROSTER_FILE = "audit.txt";
         public static final String DELIMITER = "::";
 
 
@@ -53,27 +53,13 @@ public class ClassRosterDAOFileImpl implements ClassRosterDAO{
         }
         // currentLine holds the most recent line read from the file
         String currentLine;
-        // currentTokens holds each of the parts of the currentLine after it has
-        // been split on our DELIMITER
-        // NOTE FOR APPRENTICES: In our case we use :: as our delimiter.  If
-        // currentLine looks like this:
-        // 1234::Joe::Smith::Java-September2013
-        // then currentTokens will be a string array that looks like this:
-        //
-        // ___________________________________
-        // |    |   |     |                  |
-        // |1234|Joe|Smith|Java-September2013|
-        // |    |   |     |                  |
-        // -----------------------------------
-        //  [0]  [1]  [2]         [3]
+
         String[] currentTokens;
-        // Go through ROSTER_FILE line by line, decoding each line into a
-        // Student object.
-        // Process while we have more lines in the file
+
         while (scanner.hasNextLine()) {
-            // get the next line in the file
+
             currentLine = scanner.nextLine();
-            // break up the line into tokens
+
             currentTokens = currentLine.split(DELIMITER);
             // Create a new Student object and put it into the map of students
             // NOTE FOR APPRENTICES: We are going to use the student id
@@ -88,22 +74,13 @@ public class ClassRosterDAOFileImpl implements ClassRosterDAO{
             // Put currentStudent into the map using studentID as the key
             students.put(currentStudent.getStudentId(), currentStudent);
         }
-        // close scanner
+
         scanner.close();
     }
 
-    /**
-     * Writes all students in the roster out to a ROSTER_FILE.  See loadRoster
-     * for file format.
-     *
-     * @throws ClassRosterPersistenceException if an error occurs writing to the file
-     */
+
     private void writeRoster() throws ClassRosterPersistenceException {
-        // NOTE FOR APPRENTICES: We are not handling the IOException - but
-        // we are translating it to an application specific exception and
-        // then simple throwing it (i.e. 'reporting' it) to the code that
-        // called us.  It is the responsibility of the calling code to
-        // handle any errors that occur.
+
         PrintWriter out;
 
         try {
